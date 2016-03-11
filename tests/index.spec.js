@@ -16,23 +16,23 @@ Script.runInNewContext(sandbox);
 
 Test('js-basics', suite => {
   Test('Variables with String values', t => {
-    t.ok(sandbox.firstName, 'firstName exists.');
-    t.ok(sandbox.lastName, 'lastName exists.');
-    t.ok(sandbox.birthPlace, 'birthPlace exists.');
+    t.ok(sandbox.firstName, 'firstName variable exists.');
+    t.ok(sandbox.lastName, 'lastName variable exists.');
+    t.ok(sandbox.birthPlace, 'birthPlace variable exists.');
     t.end();
   });
 
   Test('Variables with Number values', t => {
-    t.ok(sandbox.favoriteNumber, 'favoriteNumber exists.');
-    t.ok(sandbox.currentYear, 'currentYear exists.');
-    t.ok(sandbox.thatOnePrinceSong, 'thatOnePrinceSong exists.');
+    t.ok(sandbox.favoriteNumber, 'favoriteNumber variable exists.');
+    t.ok(sandbox.currentYear, 'currentYear variable exists.');
+    t.ok(sandbox.thatOnePrinceSong, 'thatOnePrinceSong variable exists.');
     t.end();
   });
 
   Test('Variables with Boolean values', t => {
-    t.notEquals(sandbox.isDaytime, void 0, 'isDayTime exists.');
-    t.notEquals(sandbox.isLeftHanded, void 0, 'isLeftHanded exists.');
-    t.notEquals(sandbox.inHawaii, void 0, 'inHawaii exists.');
+    t.notEquals(sandbox.isDaytime, void 0, 'isDayTime variable exists.');
+    t.notEquals(sandbox.isLeftHanded, void 0, 'isLeftHanded variable exists.');
+    t.notEquals(sandbox.inHawaii, void 0, 'inHawaii variable exists.');
     t.end();
   });
 
@@ -66,8 +66,14 @@ Test('js-basics', suite => {
 
     sandbox.evenNumbers.forEach(number => {
       t.ok(number % 2 === 0, `${number} is even.`)
-    })
+    });
 
+    t.end();
+  });
+
+  Test('Arithmetic Section', t => {
+    t.notEquals(sandbox.sumOfNumbers, void 0, 'sumOfNumbers variable exists.')
+    t.equals(typeof sandbox.sumOfNumbers, 'number', 'sumOfNumbers is of type: Number.')
     t.end();
   });
 
