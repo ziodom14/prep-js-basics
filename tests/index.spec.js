@@ -36,5 +36,11 @@ Test('js-basics', suite => {
     t.end();
   });
 
+  Test('Vairables with Null values', t => {
+    t.equals(sandbox.enrolledAtDevLeague, null, 'enrolledAtDevLeague exists.');
+    t.equals(sandbox.completedFridayPrep, null, 'completedFridayPrep exists.');
+    t.end();
+  });
+
   suite.end()
 })
