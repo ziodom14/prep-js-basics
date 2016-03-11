@@ -15,9 +15,11 @@ const Script = new Vm.Script(IndexFileRaw);
 Script.runInNewContext(sandbox);
 
 Test('js-basics', suite => {
-  Test('firstName variable', t => {
+  Test('Variables with String values', t => {
     t.ok(sandbox.firstName, 'firstName exists.');
-  })
+    t.ok(sandbox.lastName, 'lastName exists.');
+    t.ok(sandbox.birthPlace, 'birthPlace exists.');
+  });
 
 
   suite.end()
