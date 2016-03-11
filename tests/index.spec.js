@@ -71,17 +71,23 @@ Test('js-basics', suite => {
     t.end();
   });
 
-  Test('Arithmetic Section', t => {
+  Test('Arithmetic', t => {
     t.notEquals(sandbox.sumOfNumbers, void 0, 'sumOfNumbers variable exists.')
     t.equals(typeof sandbox.sumOfNumbers, 'number', 'sumOfNumbers is of type: Number.')
     t.end();
   });
 
-  Test('Comparisons & Logic', t => {
+  Test('Comparisons and Logic', t => {
     t.notEquals(sandbox.isEqual, void 0, 'isEqual variable exists.');
     t.equals(typeof sandbox.isEqual, 'boolean');
     t.end();
-  })
+  });
+
+  Test('Assignments', t => {
+    t.notEquals(sandbox.generalContainer, void 0, 'generalContainer variable exists.');
+
+    t.end();
+  });
 
   suite.end()
 })
