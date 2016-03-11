@@ -77,5 +77,11 @@ Test('js-basics', suite => {
     t.end();
   });
 
+  Test('Comparisons & Logic', t => {
+    t.notEquals(sandbox.isEqual, void 0, 'isEqual variable exists.');
+    t.equals(typeof sandbox.isEqual, 'boolean');
+    t.end();
+  })
+
   suite.end()
 })
