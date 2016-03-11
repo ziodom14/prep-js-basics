@@ -89,10 +89,21 @@ Test('js-basics', suite => {
     t.end();
   });
 
-  Test('Functions', t => {
+  Test('Functions: jump', t => {
     t.notEquals(sandbox.jump, void 0, 'jump function exists.');
-    t.ok(sandbox.jump(9), "You Jumped 9 feet high!");
-    t.ok(sandbox.jump(1), "You Jumped 1 feet high!");
+    t.equals(sandbox.jump(9), 'You jumped 9 feet high!', '9 feet jump, successful.');
+    t.equals(sandbox.jump(1), 'You jumped 1 feet high!', '1 feet jump successful.');
+    t.equals(sandbox.jump(66), 'You jumped 66 feet high!', 'jump function works.');
+
+    t.end();
+  });
+
+  Test('Functions: cook', t => {
+    t.notEquals(sandbox.cook, void 0, 'cook function exists.');
+    t.equals(sandbox.cook('Cheese', 'Beef', 'Burrito'), 'Cheese and Beef make a Burrito!', 'Burrito made. Delicious!');
+    t.equals(sandbox.cook('Fish', 'Rice', 'Poke Bowl'), 'Fish and Rice make a Poke Bowl!', 'Burrito made. Delicious!');
+    t.equals(sandbox.cook('1', '2', '3'), '1 and 2 make a 3!', 'cook function works.');
+
     t.end();
   });
 
