@@ -16,7 +16,7 @@ Script.runInNewContext(sandbox);
 
 Test('js-basics', suite => {
   Test('firstName variable', t => {
-
+    t.ok(sandbox.firstName, 'firstName exists.');
   })
 
 
