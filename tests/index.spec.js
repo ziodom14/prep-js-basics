@@ -42,12 +42,16 @@ Test('js-basics', suite => {
     t.end();
   });
 
-  Test('Variables with Array values', t => {
-    t.ok(sandbox.westCoast, 'westCoast exists.');
-    t.deepLooseEquals(sandbox.completedFridayPrep, [ "California"
+  Test('An array with all West Coast state names', t => {
+    var westCoastStates = [ "California"
     , "Oregon"
     , "Washington"
-    ]);
+    ];
+    t.ok(sandbox.westCoast, 'westCoast exists.');
+    t.equals(sandbox.westCoast.length, 3);
+    westCoastStates.forEach(state => {
+      t.ok(!!~sandbox.westCoast.indexOf(state), 'states bruh')
+    });
     t.end();
   });
 
