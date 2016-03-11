@@ -43,15 +43,31 @@ Test('js-basics', suite => {
   });
 
   Test('An array with all West Coast state names', t => {
+    t.ok(sandbox.westCoast, 'westCoast exists.');
+    t.equals(sandbox.westCoast.length, 3);
+
     var westCoastStates = [ "California"
     , "Oregon"
     , "Washington"
     ];
-    t.ok(sandbox.westCoast, 'westCoast exists.');
-    t.equals(sandbox.westCoast.length, 3);
+
     westCoastStates.forEach(state => {
-      t.ok(!!~sandbox.westCoast.indexOf(state), 'states bruh')
+      // `~` shifts the value one byte to the left. -1 becomes 0, 0 becomes 1, etc.
+      // `!!` coerces value to true Bool (not 'truthy'). 0 becomes `false`, >1 becomes `true`
+      t.ok(!!~sandbox.westCoast.indexOf(state), `${state} is found on the west coast.`)
     });
+
+    t.end();
+  });
+
+  Test('An array containing only even-numbered values', t => {
+    t.ok(sandbox.evenNumbers, 'evenNumbers variable exists.');
+    t.equals(sandbox.evenNumbers.length >= 10, true)
+
+    sandbox.evenNumbers.forEach(number => {
+      t.ok(number % 2 === 0, `${number} is even.`)
+    })
+
     t.end();
   });
 
