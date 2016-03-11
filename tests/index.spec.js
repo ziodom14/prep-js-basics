@@ -29,5 +29,12 @@ Test('js-basics', suite => {
     t.end();
   });
 
+  Test('Vairables with Boolean values', t => {
+    t.notEquals(sandbox.isDaytime, void 0, 'isDayTime exists.');
+    t.notEquals(sandbox.isLeftHanded, void 0, 'isLeftHanded exists.');
+    t.notEquals(sandbox.inHawaii, void 0, 'inHawaii exists.');
+    t.end();
+  });
+
   suite.end()
 })
