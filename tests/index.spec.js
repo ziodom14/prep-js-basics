@@ -11,7 +11,7 @@ let filePath = Path.resolve(__dirname, './../index.js');
 const IndexFileRaw = Fs.readFileSync( filePath, { encoding: 'utf8' });
 
 let sandbox = {};
-const Script = new Vm.Script(IndexFileRaw);
+const Script = new Vm.Script(IndexFileRaw, { filename: 'index.js' });
 Script.runInNewContext(sandbox);
 
 Test('js-basics', suite => {
@@ -19,8 +19,15 @@ Test('js-basics', suite => {
     t.ok(sandbox.firstName, 'firstName exists.');
     t.ok(sandbox.lastName, 'lastName exists.');
     t.ok(sandbox.birthPlace, 'birthPlace exists.');
+    t.end();
   });
 
+  Test('Variables with Number values', t => {
+    t.ok(sandbox.favoriteNumber, 'favoriteNumber exists.');
+    t.ok(sandbox.currentYear, 'currentYear exists.');
+    t.ok(sandbox.thatOnePrinceSong, 'thatOnePrinceSong exists.');
+    t.end();
+  });
 
   suite.end()
 })
