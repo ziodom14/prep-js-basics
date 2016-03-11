@@ -89,5 +89,12 @@ Test('js-basics', suite => {
     t.end();
   });
 
-  suite.end()
-})
+  Test('Functions', t => {
+    t.notEquals(sandbox.jump, void 0, 'jump function exists.');
+    t.ok(sandbox.jump(9), "You Jumped 9 feet high!");
+    t.ok(sandbox.jump(1), "You Jumped 1 feet high!");
+    t.end();
+  });
+
+  suite.end();
+});
