@@ -1,7 +1,10 @@
 # JS-Basics for Dev League Prep
 
 ## Getting Started
-1. **Fork** this repository and **clone** it from your personal GitHub account.
+1. **Fork** this repository
+1. **clone** this repo from your personal GitHub account.
+    - Copy the SSH address on the page
+    - Run the command: `$ git clone [YOUR SSH ADDRESS]` to clone this repo onto your computer.
 1. Navigate into the exercise folder, e.g. `$ cd prep-js-basics`.
 1. Run the command: `$ npm install` to get all other files needed to run the tests.
 1. Your work will be entered into the file named `index.js`
