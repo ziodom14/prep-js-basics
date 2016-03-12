@@ -14,7 +14,7 @@ let sandbox = {};
 const Script = new Vm.Script(IndexFileRaw, { filename: 'index.js' });
 Script.runInNewContext(sandbox);
 
-Test('js-basics', suite => {
+Test('Js-Basics', suite => {
   Test('Variables with String values', t => {
     t.ok(sandbox.firstName, 'firstName variable exists.');
     t.ok(sandbox.lastName, 'lastName variable exists.');
