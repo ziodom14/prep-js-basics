@@ -43,8 +43,12 @@ Test('Js-Basics', suite => {
   });
 
   Test('An array with all West Coast state names', t => {
+    if (!sandbox.westCoast) {
+      t.fail('westCoast variable is not defined.');
+      return t.end();
+    }
+
     t.ok(sandbox.westCoast, 'westCoast exists.');
-    t.equals(sandbox.westCoast.length, 3);
 
     let westCoastStates = [ "California"
     , "Oregon"
@@ -61,6 +65,11 @@ Test('Js-Basics', suite => {
   });
 
   Test('An array containing only even-numbered values', t => {
+    if (!sandbox.westCoast) {
+      t.fail('evenNumbers variable is not defined.');
+      return t.end();
+    }
+
     t.ok(sandbox.evenNumbers, 'evenNumbers variable exists.');
     t.equals(sandbox.evenNumbers.length >= 10, true)
 
@@ -90,6 +99,11 @@ Test('Js-Basics', suite => {
   });
 
   Test('Functions: jump', t => {
+    if (!sandbox.jump) {
+      t.fail('jump function is not defined.');
+      return t.end();
+    }
+
     t.notEquals(sandbox.jump, void 0, 'jump function exists.');
     t.equals(sandbox.jump(9), 'You jumped 9 feet high!', '9 feet jump, successful.');
     t.equals(sandbox.jump(1), 'You jumped 1 feet high!', '1 feet jump successful.');
@@ -99,6 +113,11 @@ Test('Js-Basics', suite => {
   });
 
   Test('Functions: cook', t => {
+    if (!sandbox.cook) {
+      t.fail('cook function is not defined.');
+      return t.end();
+    }
+
     t.notEquals(sandbox.cook, void 0, 'cook function exists.');
     t.equals(sandbox.cook('Cheese', 'Beef', 'Burrito'), 'Cheese and Beef make a Burrito!', 'Burrito made. Delicious!');
     t.equals(sandbox.cook('Fish', 'Rice', 'Poke Bowl'), 'Fish and Rice make a Poke Bowl!', 'Burrito made. Delicious!');
