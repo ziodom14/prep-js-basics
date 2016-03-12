@@ -22,7 +22,7 @@
 
   Declare variables named `isDaytime`, `isLeftHanded`, `inHawaii`, and `isHappyCoding`. Their values should be a Boolean.
 
-1. Variables with null
+1. **Variables with null**
 
   Declare variables named `enrolledAtDevLeague` and `completedFridayPrep`. Their values should be a Null value.
 
