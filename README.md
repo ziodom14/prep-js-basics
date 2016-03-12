@@ -42,11 +42,11 @@
 
   Declare a variable named `isEqual` which is a Boolean. This Boolean contains the result of performing a comparison to test if two strings are equal. We want to compare the two strings "Tacocat" and "tacocat" and `console.log()` the result.
 
-  **NOTE:**
+  *Note:*
     There is no test which tests your console.log()'s output'.
     Also, there are zero tests for the BONUS below.
 
-  **BONUS:**
+  *Bonus:*
     See if you can come up with a few examples of double comparison
     operator(==) vs triple comparison operator(===).
 
@@ -56,7 +56,7 @@
 
   Write 5 different assignment statements and `console.log()` the value of the variable after each assignment statement to show the current value.
 
-  *caveat:*
+  *note:*
     The tests for this section cannot test your variable as it changes, it can only test that you declared the variable by giving it the right name.
 
 1. **Declare Functions: jump**
