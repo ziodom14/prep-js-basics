@@ -46,7 +46,7 @@ Test('js-basics', suite => {
     t.ok(sandbox.westCoast, 'westCoast exists.');
     t.equals(sandbox.westCoast.length, 3);
 
-    var westCoastStates = [ "California"
+    let westCoastStates = [ "California"
     , "Oregon"
     , "Washington"
     ];
